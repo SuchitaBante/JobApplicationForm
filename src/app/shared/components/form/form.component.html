@@ -7,7 +7,7 @@
                     <div class="form-group">
                         <label>Full Name*</label>
                         <input type="text" class="form-control" name="name" ngModel #name="ngModel" required
-                            pattern="[a-zA-Z]*" minlength="3" maxlength="50">
+                            pattern="^[a-zA-Z]+$" minlength="3" maxlength="50">
                         <span *ngIf="name.touched&& name.hasError('required')" class="text-danger">
                             Full Name is required
                         </span>
@@ -24,7 +24,7 @@
                             Email is required
                         </span>
                         <span *ngIf="email.dirty && email.hasError('pattern') " class="text-danger">
-                            Email is required
+                         Enter Valid Email 
                         </span>
                     </div>
                     <br>
