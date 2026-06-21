@@ -1,0 +1,77 @@
+<div class="container">
+    <div class="row">
+        <div class="card">
+            <div class="card-body">
+                <form #jobApplication="ngForm" (ngSubmit)="onSubmit(jobApplication)">
+
+                    <div class="form-group">
+                        <label>Full Name*</label>
+                        <input type="text" class="form-control" name="name" ngModel #name="ngModel" required pattern="[a-zA-Z]*" minlength="3" maxlength="50">
+                        <span *ngIf="name.invalid && name.touched" class="text-danger">
+                        Full Name is required
+                        </span>
+                        </div>
+                        <br>
+
+                        <div class="form-group">
+                            <label>Email*</label>
+                            <input type="text" class="form-control" name="email" ngModel #email="ngModel" required>
+                            <span *ngIf="email.invalid && email.touched " class="text-danger">
+                                Email is required
+                            </span>
+                            </div>
+                            <br>
+
+                            <div class="form-group">
+                                <label>Mobile Number*</label>
+                                <input type="number" class="form-control" name="mobileNo" ngModel #mobileNo="ngModel" required pattern="^[0-9]{10}$">
+                                <span *ngIf="mobileNo.invalid && mobileNo.touched" class="text-danger">
+                                    Enter Valid 10 Digit Mobile Number
+                                </span>
+                            </div>
+                        
+
+                            <div class="form-group">
+                                <label>Experience*</label>
+                                <input type="text" class="form-control" name="experience" ngModel #experience="ngModel" required>
+                                <span *ngIf="experience.invalid && experience.touched" class="text-danger">Experience is required</span>
+                            </div>
+                            <br>
+
+                            <div class="form-group">
+                                <label> SkillS*</label>
+                             
+                               <br>
+                               <input type="checkbox" name="skills" value="Java" ngModel #skills="ngModel" required>Java
+                               <input type="checkbox" name="skills" value="CSS" ngModel #skills="ngModel" required>CSS
+                               <input type="checkbox" name="skills" value="HTML" ngModel #skills="ngModel" required>HTML
+                               <input type="checkbox" name="skills" value="Angualr" ngModel #skills="ngModel" required>Angualr
+                            <br>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Resume URL*</label>
+                                <input type=" text" class="form-control"  name="resumeUrl" ngModel #resumeUrl="ngModel" required minlength="10" maxlength="30">
+                                <span *ngIf="resumeUrl.invalid && resumeUrl.touched" class="text-danger">
+                                Resume URL is required
+                                </span>
+                            </div>
+                            <br>
+
+                            <div class="form-group">
+                                <label>Expected Salary*</label>
+                                <input type="number" class="form-control" name="expectedSalary" ngModel #expectedSalary="ngModel" required>
+                                <span *ngIf="expectedSalary.invalid && expectedSalary.touched" class="text-danger">
+                                    Expected Salary is required
+                                </span>
+        
+                            </div>
+                            <br>
+
+                            <button mat-raised-button color="primary" type="submit" class="w-100"> Register</button>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
