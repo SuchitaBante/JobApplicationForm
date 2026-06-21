@@ -10,13 +10,19 @@
                         <span *ngIf="name.touched&& name.hasError('required')" class="text-danger">
                         Full Name is required
                         </span>
+                        <span *ngIf="name.dirty&& name.hasError('pattern')" class="text-danger">
+                       Enter Valid Full Name 
+                        </span>
                         </div>
                         <br>
 
                         <div class="form-group">
                             <label>Email*</label>
                             <input type="text" class="form-control" name="email" ngModel #email="ngModel" required>
-                            <span *ngIf="email.invalid && email.touched " class="text-danger">
+                            <span *ngIf="email.touched && email.hasError('required') " class="text-danger">
+                                Email is required
+                            </span>
+                            <span *ngIf="email.dirty && email.hasError('pattern') " class="text-danger">
                                 Email is required
                             </span>
                             </div>
@@ -25,7 +31,10 @@
                             <div class="form-group">
                                 <label>Mobile Number*</label>
                                 <input type="number" class="form-control" name="mobileNo" ngModel #mobileNo="ngModel" required pattern="^[0-9]{10}$">
-                                <span *ngIf="mobileNo.invalid && mobileNo.touched" class="text-danger">
+                                <span *ngIf="mobileNo.touched && mobileNo.hasError('required')" class="text-danger">
+                                    Enter Valid 10 Digit Mobile Number
+                                </span>
+                                 <span *ngIf="mobileNo.dirty && mobileNo.hasError('pattern')" class="text-danger">
                                     Enter Valid 10 Digit Mobile Number
                                 </span>
                             </div>
@@ -52,8 +61,11 @@
                             <div class="form-group">
                                 <label>Resume URL*</label>
                                 <input type=" text" class="form-control"  name="resumeUrl" ngModel #resumeUrl="ngModel" required minlength="10" maxlength="30">
-                                <span *ngIf="resumeUrl.invalid && resumeUrl.touched" class="text-danger">
+                                <span *ngIf="resumeUrl.touched && resumeUrl.hasError('required')" class="text-danger">
                                 Resume URL is required
+                                </span>
+                                <span *ngIf="resumeUrl.dirty && resumeUrl.hasError('pattern')" class="text-danger">
+                               Enter Valid Resume URL 
                                 </span>
                             </div>
                             <br>
